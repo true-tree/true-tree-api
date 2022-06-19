@@ -2,7 +2,7 @@ name: Deploy SpringBoot Project
 
 on:
   push:
-    branches: [ master ]
+    branches: [ main ]
 
 jobs:
   deploy:
