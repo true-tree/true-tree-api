@@ -9,7 +9,7 @@ cp $REPOSITORY/build/libs/*.jar $START_REPOSITORY
 
 echo "> 현재 구동중인 애플리케이션 pid 확인"
 
-APP_NAME=we-are-dj
+APP_NAME=truetree
 CURRENT_PID=$(pgrep -f $APP_NAME)
 
 echo "현재 구동중인 어플리케이션 pid: $CURRENT_PID"
