@@ -1,0 +1,45 @@
+name: Deploy SpringBoot Project
+
+on:
+  push:
+    branches: [ master ]
+
+jobs:
+  deploy:
+    name: Deploy
+    runs-on: ubuntu-latest
+
+    steps:
+    - name: CheckOut
+      uses: actions/checkout@v2
+    
+    - name: 자바 JDK 11 설치
+      uses: actions/setup-java@v2
+      with:
+        java-version: '11'
+        distribution: 'adopt'
+        
+    - name: gradlew 권한 부여
+      run: chmod +x gradlew
+      
+    - name: Gradle Build
+      run: ./gradlew build
+    
+    - name: 압축 시작.
+      run: zip -qq -r ./true-tree.zip .
+      shell: bash
+
+    
+    - name: AWS 설정
+      uses: aws-actions/configure-aws-credentials@v1
+      with:
+        aws-access-key-id: ${{ secrets.AWS_ACCESS_KEY_ID }}
+        aws-secret-access-key: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
+        aws-region: ap-northeast-2
+      
+    - name: S3 업로드
+      run: aws s3 cp --region ap-northeast-2 true-tree.zip s3://true-tree-build/deploy/true-tree.zip
+    
+    - name: CodeDeploy
+      run: aws deploy create-deployment --application-name true-tree-codedeploy --deployment-config-name CodeDeployDefault.OneAtATime --deployment-group-name true-tree-codedeploy-group --s3-location bucket=true-tree-build,bundleType=zip,key=deploy/true-tree.zip
+      
