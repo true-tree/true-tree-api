@@ -7,3 +7,5 @@ spring:
   profiles:
     include:
       - db
+      - jwt
+      - oauth
