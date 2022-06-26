@@ -21,3 +21,8 @@ true:
       claim-key: member-id
       issuer: testtesttesttesttesttesttesttesttesttesttesttesttesttesttesttesttesttesttest
       subject: testtesttesttesttesttesttesttesttesttesttesttesttesttesttesttesttesttesttest
+kakao:
+  client-id: testtesttesttesttesttesttesttesttesttesttesttesttesttesttesttesttesttesttest
+  client-secret: test
+  redirect-uri: 'testtesttesttesttesttesttesttesttesttesttesttesttesttesttesttesttesttesttest'
+  authorization-grant-type: authorization_code
