@@ -171,3 +171,4 @@ fabric.properties
 
 ### application ###
 application-db.yml
+application-jwt.yml

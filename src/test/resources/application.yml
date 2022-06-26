@@ -1,0 +1,23 @@
+spring:
+  datasource:
+    url: jdbc:h2:~/test;DB_CLOSE_DELAY=-1
+    username: sa
+    password:
+    driver-class-name: org.h2.Driver
+  jpa:
+    hibernate:
+      ddl-auto: create
+    properties:
+      hibernate:
+        format_sql: true
+    show-sql: true
+
+true:
+  tree:
+    jwt:
+      secret-key: testtesttesttesttesttesttesttesttesttesttesttesttesttesttesttesttesttesttest
+      access-token-expiration-time: 1800000 # 30분
+      refresh-token-expiration-time: 604800000 # 7일 // 밀리 세컨드임
+      claim-key: member-id
+      issuer: testtesttesttesttesttesttesttesttesttesttesttesttesttesttesttesttesttesttest
+      subject: testtesttesttesttesttesttesttesttesttesttesttesttesttesttesttesttesttesttest
