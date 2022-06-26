@@ -19,10 +19,10 @@ import java.util.stream.Collectors;
 @Table(
         schema = "true_tree_main",
         indexes = {
-                @Index(unique = true, name = "UQ_member_1", columnList = "nickName")
+                @Index(unique = true, name = "UQ_member_1", columnList = "nickName") // 필드명을 적어줘야함
         },
         uniqueConstraints = {
-              @UniqueConstraint(name = "UQ_member_1",columnNames = {"nickName"})
+              @UniqueConstraint(name = "UQ_member_1",columnNames = {"nickName"}) // 필드명을 적어줘야함
         }
 )
 @NoArgsConstructor
