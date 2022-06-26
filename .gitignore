@@ -172,3 +172,4 @@ fabric.properties
 ### application ###
 application-db.yml
 application-jwt.yml
+application-oauth.yml
