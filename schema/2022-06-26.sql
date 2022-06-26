@@ -4,9 +4,8 @@ CREATE TABLE member
     `id`          INT             NOT NULL    AUTO_INCREMENT COMMENT '회원 고유 아이디',
     `sns_id`      VARCHAR(100)    NOT NULL    COMMENT 'SNS 고유 아이디',
     `nick_name`   VARCHAR(30)     NOT NULL    COMMENT '닉네임',
-    `socialType`  ENUM('GOOGLE', 'KAKAO', 'APPLE')            NOT NULL    COMMENT '소셜로그인 타입',
+    `social_type`  ENUM('GOOGLE', 'KAKAO', 'APPLE')            NOT NULL    COMMENT '소셜로그인 타입',
     `money`       INT             NOT NULL    COMMENT '유저의 현재 자금',
-    `role`        INT             NOT NULL    COMMENT '권한',
     `create_at`   DATETIME        NOT NULL    COMMENT '회원가입일자',
     `update_at`   DATETIME        NOT NULL    COMMENT '정보변경일자',
     PRIMARY KEY (id)

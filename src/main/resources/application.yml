@@ -8,3 +8,4 @@ spring:
     include:
       - db
       - jwt
+      - oauth

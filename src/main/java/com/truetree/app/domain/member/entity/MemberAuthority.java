@@ -1,7 +1,7 @@
 package com.truetree.app.domain.member.entity;
 
-import com.truetree.app.domain.member.entity.Member;
 import com.truetree.app.domain.member.entity.enums.Authority;
+import lombok.Builder;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 
@@ -18,11 +18,16 @@ public class MemberAuthority {
     private Long id;
 
     @ManyToOne(fetch = FetchType.LAZY)
-    @JoinColumn(nullable = false)
+    @JoinColumn(nullable = false, name = "member_id")
     private Member memberId;
 
     @Enumerated(EnumType.STRING)
     @Column(nullable = false)
     private Authority authority;
 
+    @Builder
+    public MemberAuthority(Member memberId, Authority authority) {
+        this.memberId = memberId;
+        this.authority = authority;
+    }
 }
