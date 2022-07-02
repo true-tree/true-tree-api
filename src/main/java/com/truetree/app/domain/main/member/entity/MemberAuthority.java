@@ -1,6 +1,6 @@
-package com.truetree.app.domain.member.entity;
+package com.truetree.app.domain.main.member.entity;
 
-import com.truetree.app.domain.member.entity.enums.Authority;
+import com.truetree.app.domain.main.member.entity.enums.Authority;
 import lombok.Builder;
 import lombok.Getter;
 import lombok.NoArgsConstructor;

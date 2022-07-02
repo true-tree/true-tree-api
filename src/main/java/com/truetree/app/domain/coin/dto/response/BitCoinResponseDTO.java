@@ -1,6 +1,6 @@
 package com.truetree.app.domain.coin.dto.response;
 
-import com.truetree.app.domain.coin.entity.BitCoin;
+import com.truetree.app.domain.coin.entity.BtcUsdt;
 import lombok.Getter;
 
 import java.time.LocalDateTime;
@@ -21,17 +21,17 @@ public class BitCoinResponseDTO {
     private final long takerBuyBaseAssetVolume;
     private final String symbol;
 
-    public BitCoinResponseDTO(BitCoin bitCoin) {
-        this.id = bitCoin.getId();
-        this.openTime = bitCoin.getOpenTime();
-        this.open = bitCoin.getOpen();
-        this.high = bitCoin.getHigh();
-        this.close = bitCoin.getClose();
-        this.volume = bitCoin.getVolume();
-        this.quoteAv = bitCoin.getQuoteAv();
-        this.trades = bitCoin.getTrades();
-        this.takerBuyVolume = bitCoin.getTakerBuyVolume();
-        this.takerBuyBaseAssetVolume = bitCoin.getTakerBuyBaseAssetVolume();
-        this.symbol = bitCoin.getSymbol();
+    public BitCoinResponseDTO(BtcUsdt btcUsdt) {
+        this.id = btcUsdt.getId();
+        this.openTime = btcUsdt.getOpenTime();
+        this.open = btcUsdt.getOpen();
+        this.high = btcUsdt.getHigh();
+        this.close = btcUsdt.getClose();
+        this.volume = btcUsdt.getVolume();
+        this.quoteAv = btcUsdt.getQuoteAv();
+        this.trades = btcUsdt.getTrades();
+        this.takerBuyVolume = btcUsdt.getTakerBuyVolume();
+        this.takerBuyBaseAssetVolume = btcUsdt.getTakerBuyBaseAssetVolume();
+        this.symbol = btcUsdt.getSymbol();
     }
 }

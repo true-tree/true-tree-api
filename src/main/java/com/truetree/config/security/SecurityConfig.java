@@ -1,6 +1,6 @@
 package com.truetree.config.security;
 
-import com.truetree.app.domain.member.entity.MemberRepository;
+import com.truetree.app.domain.main.member.entity.MemberRepository;
 import com.truetree.common.jwt.JwtTokenUtil;
 import com.truetree.config.security.jwt.JwtFilterConfig;
 import lombok.RequiredArgsConstructor;
@@ -10,9 +10,6 @@ import org.springframework.security.config.annotation.web.configuration.EnableWe
 import org.springframework.security.config.annotation.web.configurers.AbstractHttpConfigurer;
 import org.springframework.security.config.annotation.web.configurers.LogoutConfigurer;
 import org.springframework.security.web.SecurityFilterChain;
-import org.springframework.web.cors.CorsConfiguration;
-import org.springframework.web.cors.CorsConfigurationSource;
-import org.springframework.web.cors.UrlBasedCorsConfigurationSource;
 
 
 /**

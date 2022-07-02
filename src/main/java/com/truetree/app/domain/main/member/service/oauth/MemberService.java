@@ -1,14 +1,13 @@
-package com.truetree.app.domain.member.service.oauth;
+package com.truetree.app.domain.main.member.service.oauth;
 
-import com.truetree.app.domain.member.entity.Member;
-import com.truetree.app.domain.member.entity.MemberAuthority;
-import com.truetree.app.domain.member.entity.MemberAuthorityRepository;
-import com.truetree.app.domain.member.entity.MemberRepository;
-import com.truetree.app.domain.member.entity.enums.Authority;
-import com.truetree.app.domain.member.service.oauth.kakao.KakaoCall;
-import com.truetree.app.domain.member.vo.kakao.KakaoProfileVO;
-import com.truetree.app.domain.member.vo.kakao.KakaoTokenVO;
-import com.truetree.app.web.member.model.request.MemberSaveRequestDTOForKakao;
+import com.truetree.app.domain.main.member.entity.MemberAuthority;
+import com.truetree.app.domain.main.member.entity.MemberAuthorityRepository;
+import com.truetree.app.domain.main.member.entity.enums.Authority;
+import com.truetree.app.domain.main.member.service.oauth.kakao.KakaoCall;
+import com.truetree.app.domain.main.member.vo.kakao.KakaoTokenVO;
+import com.truetree.app.domain.main.member.entity.Member;
+import com.truetree.app.domain.main.member.entity.MemberRepository;
+import com.truetree.app.domain.main.member.vo.kakao.KakaoProfileVO;
 import com.truetree.app.web.member.model.response.TokenResponseDTO;
 import com.truetree.common.jwt.JwtTokenUtil;
 import lombok.RequiredArgsConstructor;

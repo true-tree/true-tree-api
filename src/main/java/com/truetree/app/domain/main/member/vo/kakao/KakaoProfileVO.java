@@ -1,10 +1,9 @@
-package com.truetree.app.domain.member.vo.kakao;
+package com.truetree.app.domain.main.member.vo.kakao;
 
-import com.truetree.app.domain.member.entity.Member;
-import com.truetree.app.domain.member.entity.enums.SocialType;
+import com.truetree.app.domain.main.member.entity.enums.SocialType;
+import com.truetree.app.domain.main.member.entity.Member;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
-import lombok.Setter;
 
 @Getter
 @NoArgsConstructor

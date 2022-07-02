@@ -1,8 +1,8 @@
 package com.truetree.config.security.jwt;
 
-import com.truetree.app.domain.member.entity.Member;
-import com.truetree.app.domain.member.entity.MemberRepository;
-import com.truetree.app.domain.member.exception.MemberExceptionMessage;
+import com.truetree.app.domain.main.member.entity.Member;
+import com.truetree.app.domain.main.member.entity.MemberRepository;
+import com.truetree.app.domain.main.member.exception.MemberExceptionMessage;
 import com.truetree.common.jwt.JwtTokenUtil;
 import com.truetree.config.security.jwt.enums.AuthorizationType;
 import com.truetree.exception.MemberUnauthorizedException;
