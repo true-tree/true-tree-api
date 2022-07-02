@@ -9,7 +9,7 @@ import java.time.LocalDateTime;
 public class BitCoinResponseDTO {
     private final Long id;
 
-    private final String openTime;
+    private final LocalDateTime openTime;
 
     private final long open;
     private final long high;

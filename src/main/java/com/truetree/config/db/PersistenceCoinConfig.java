@@ -1,6 +1,8 @@
 package com.truetree.config.db;
 
 import org.hibernate.boot.model.naming.CamelCaseToUnderscoresNamingStrategy;
+import org.hibernate.cfg.AvailableSettings;
+import org.springframework.boot.autoconfigure.orm.jpa.HibernateProperties;
 import org.springframework.boot.context.properties.ConfigurationProperties;
 import org.springframework.boot.jdbc.DataSourceBuilder;
 import org.springframework.boot.orm.jpa.hibernate.SpringImplicitNamingStrategy;
@@ -33,15 +35,7 @@ public class PersistenceCoinConfig {
         em.setPackagesToScan("com.truetree.app.domain.coin.*");
         HibernateJpaVendorAdapter vendorAdapter = new HibernateJpaVendorAdapter();
         em.setJpaVendorAdapter(vendorAdapter);
-        Map<String, Object> properties = new HashMap<>();
-        properties.put("hibernate.hbm2ddl.auto", "none");
-        properties.put("hibernate.dialect", "org.hibernate.dialect.MySQLInnoDBDialect");
-        properties.put("hibernate.show_sql", true);
-        properties.put("hibernate.format_sql", true);
-        properties.put("hibernate.physical_naming_strateg", CamelCaseToUnderscoresNamingStrategy.class.getName());
-        properties.put("hibernate.implicit_naming_strategy", SpringImplicitNamingStrategy.class.getName());
-
-        em.setJpaPropertyMap(properties);
+        em.setJpaPropertyMap(HibernateCommonProperties.commonProperties());
         return em;
     }
 

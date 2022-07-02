@@ -4,7 +4,6 @@ import org.hibernate.boot.model.naming.CamelCaseToUnderscoresNamingStrategy;
 import org.springframework.boot.context.properties.ConfigurationProperties;
 import org.springframework.boot.jdbc.DataSourceBuilder;
 import org.springframework.boot.orm.jpa.hibernate.SpringImplicitNamingStrategy;
-import org.springframework.boot.orm.jpa.hibernate.SpringPhysicalNamingStrategy;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.context.annotation.Primary;
@@ -20,7 +19,7 @@ import java.util.HashMap;
 import java.util.Map;
 
 @EnableJpaRepositories(
-        basePackages = {"com.truetree.app.domain.member.entity"},
+        basePackages = {"com.truetree.app.domain.main.*"},
         entityManagerFactoryRef = "mainEntityManager",
         transactionManagerRef = "mainTransactionManager"
 )
@@ -33,19 +32,11 @@ public class PersistenceMainConfig {
     public LocalContainerEntityManagerFactoryBean mainEntityManager() {
         LocalContainerEntityManagerFactoryBean em = new LocalContainerEntityManagerFactoryBean();
         em.setDataSource(mainDataSource());
-        em.setPackagesToScan("com.truetree.app.domain.member.entity");
+        em.setPackagesToScan("com.truetree.app.domain.main.*");
 
         HibernateJpaVendorAdapter vendorAdapter = new HibernateJpaVendorAdapter();
         em.setJpaVendorAdapter(vendorAdapter);
-        Map<String, Object> properties = new HashMap<>();
-        properties.put("hibernate.hbm2ddl.auto", "none");
-        properties.put("hibernate.dialect", "org.hibernate.dialect.MySQLInnoDBDialect");
-        properties.put("hibernate.show_sql", true);
-        properties.put("hibernate.format_sql", true);
-        properties.put("hibernate.physical_naming_strateg", CamelCaseToUnderscoresNamingStrategy.class.getName());
-        properties.put("hibernate.implicit_naming_strategy", SpringImplicitNamingStrategy.class.getName());
-
-        em.setJpaPropertyMap(properties);
+        em.setJpaPropertyMap(HibernateCommonProperties.commonProperties());
         return em;
     }
 

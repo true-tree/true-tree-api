@@ -1,4 +1,4 @@
-package com.truetree.app.domain.member.exception;
+package com.truetree.app.domain.main.member.exception;
 
 import com.truetree.exception.common.ErrorTemplate;
 import lombok.RequiredArgsConstructor;
