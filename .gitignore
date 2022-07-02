@@ -173,4 +173,4 @@ fabric.properties
 application-db.yml
 application-jwt.yml
 application-oauth.yml
-database.properties
+src/main/resources/database.properties
