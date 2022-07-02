@@ -17,7 +17,6 @@ import java.util.stream.Collectors;
 
 @Getter
 @Table(
-        schema = "true_tree_main",
         indexes = {
                 @Index(unique = true, name = "UQ_member_1", columnList = "nickName") // 필드명을 적어줘야함
         },
