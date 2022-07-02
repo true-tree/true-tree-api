@@ -3,6 +3,7 @@ package com.truetree.app.domain.coin.entity;
 import lombok.Builder;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
+import org.hibernate.annotations.CreationTimestamp;
 
 import javax.persistence.*;
 import java.time.LocalDateTime;
@@ -18,13 +19,14 @@ import java.time.LocalDateTime;
 @NoArgsConstructor
 @Table(name = "btcusdt")
 @Entity
-public class BitCoin {
+public class BtcUsdt {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
-    private LocalDateTime openTime;
+    @Column
+    private String openTime;
 
     private long open;
     private long high;
@@ -37,7 +39,7 @@ public class BitCoin {
     private String symbol;
 
     @Builder
-    public BitCoin(LocalDateTime openTime, long open, long high, long close, long volume, long quoteAv, long trades, long takerBuyVolume, long takerBuyBaseAssetVolume, String symbol) {
+    public BtcUsdt(String openTime, long open, long high, long close, long volume, long quoteAv, long trades, long takerBuyVolume, long takerBuyBaseAssetVolume, String symbol) {
         this.openTime = openTime;
         this.open = open;
         this.high = high;
