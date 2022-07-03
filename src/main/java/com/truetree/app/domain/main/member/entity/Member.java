@@ -1,6 +1,6 @@
-package com.truetree.app.domain.member.entity;
+package com.truetree.app.domain.main.member.entity;
 
-import com.truetree.app.domain.member.entity.enums.SocialType;
+import com.truetree.app.domain.main.member.entity.enums.SocialType;
 import lombok.Builder;
 import lombok.Getter;
 import lombok.NoArgsConstructor;

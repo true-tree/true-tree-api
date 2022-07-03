@@ -1,6 +1,6 @@
-package com.truetree.app.domain.game;
+package com.truetree.app.domain.main.game;
 
-import com.truetree.app.domain.member.entity.Member;
+import com.truetree.app.domain.main.member.entity.Member;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 

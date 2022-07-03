@@ -1,4 +1,4 @@
-package com.truetree.app.domain.member.entity;
+package com.truetree.app.domain.main.member.entity;
 
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.data.jpa.repository.Query;

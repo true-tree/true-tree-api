@@ -6,6 +6,6 @@ server:
 spring:
   profiles:
     include:
-      - db
+#      - db
       - jwt
       - oauth

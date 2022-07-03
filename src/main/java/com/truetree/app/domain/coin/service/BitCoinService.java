@@ -1,7 +1,7 @@
 package com.truetree.app.domain.coin.service;
 
 import com.truetree.app.domain.coin.dto.response.BitCoinResponseDTO;
-import com.truetree.app.domain.coin.entity.BitCoin;
+import com.truetree.app.domain.coin.entity.BtcUsdt;
 import com.truetree.app.domain.coin.repository.BitCoinRepository;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
@@ -18,11 +18,11 @@ public class BitCoinService {
 
     @Transactional(readOnly = true)
     public List<BitCoinResponseDTO> getBitCoinData(Integer level) {
-        List<BitCoin> bitCoinList = bitCoinRepository.findAllByIdBetween(0,300);
+        List<BtcUsdt> btcUsdtList = bitCoinRepository.findAllByIdBetween(0,300);
 
         level -= 1;
 
-        List<BitCoinResponseDTO> bitCoinResponseDTOList = bitCoinList.subList(level * ELEMENT_COUNT, (level + 1) * ELEMENT_COUNT)
+        List<BitCoinResponseDTO> bitCoinResponseDTOList = btcUsdtList.subList(level * ELEMENT_COUNT, (level + 1) * ELEMENT_COUNT)
                 .stream()
                 .map(BitCoinResponseDTO::new)
                 .collect(Collectors.toList());

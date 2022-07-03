@@ -1,4 +1,4 @@
-package com.truetree.app.domain.member.vo.kakao;
+package com.truetree.app.domain.main.member.vo.kakao;
 
 import lombok.Getter;
 import lombok.NoArgsConstructor;

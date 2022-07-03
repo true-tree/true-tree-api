@@ -1,6 +1,6 @@
 package com.truetree.config.security.jwt;
 
-import com.truetree.app.domain.member.entity.MemberRepository;
+import com.truetree.app.domain.main.member.entity.MemberRepository;
 import com.truetree.common.jwt.JwtTokenUtil;
 import lombok.RequiredArgsConstructor;
 import org.springframework.security.config.annotation.SecurityConfigurerAdapter;

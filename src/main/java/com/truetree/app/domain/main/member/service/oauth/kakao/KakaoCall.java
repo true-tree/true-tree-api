@@ -1,7 +1,7 @@
-package com.truetree.app.domain.member.service.oauth.kakao;
+package com.truetree.app.domain.main.member.service.oauth.kakao;
 
-import com.truetree.app.domain.member.vo.kakao.KakaoProfileVO;
-import com.truetree.app.domain.member.vo.kakao.KakaoTokenVO;
+import com.truetree.app.domain.main.member.vo.kakao.KakaoProfileVO;
+import com.truetree.app.domain.main.member.vo.kakao.KakaoTokenVO;
 import lombok.Getter;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.http.HttpEntity;
