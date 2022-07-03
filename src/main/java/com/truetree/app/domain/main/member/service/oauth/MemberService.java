@@ -42,9 +42,13 @@ public class MemberService {
         return createToken(member.getId());
     }
 
-    public KakaoProfileVO getKakaoProfile(String code) {
+    public KakaoProfileVO getKakaoProfileByCode(String code) {
         KakaoTokenVO kakaoToken = kakaoRequest.getKakaoAccessToken(code);
-        return kakaoRequest.getKakaoProfile(kakaoToken);
+        return kakaoRequest.getKakaoProfile(kakaoToken.getAccess_token());
+    }
+    
+    public KakaoProfileVO getKakaoProfileByAccessToken(String accessToken) {
+        return kakaoRequest.getKakaoProfile(accessToken);
     }
 
     private TokenResponseDTO createToken(Long userId) {

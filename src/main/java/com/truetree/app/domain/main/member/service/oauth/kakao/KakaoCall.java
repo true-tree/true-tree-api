@@ -59,9 +59,9 @@ public class KakaoCall {
         );
     }
 
-    public KakaoProfileVO getKakaoProfile(KakaoTokenVO kakaoTokenVO) {
+    public KakaoProfileVO getKakaoProfile(String accessToken) {
 
-        final String authorization = "Bearer " + kakaoTokenVO.getAccess_token();
+        final String authorization = "Bearer " + accessToken;
 
         HttpHeaders header = new HttpHeaders();
 
