@@ -12,6 +12,7 @@ public class BitCoinResponseDTO {
     private final LocalDateTime openTime;
 
     private final long open;
+    private final long low;
     private final long high;
     private final long close;
     private final long volume;
@@ -26,6 +27,7 @@ public class BitCoinResponseDTO {
         this.openTime = btcUsdt.getOpenTime();
         this.open = btcUsdt.getOpen();
         this.high = btcUsdt.getHigh();
+        this.low = btcUsdt.getL
         this.close = btcUsdt.getClose();
         this.volume = btcUsdt.getVolume();
         this.quoteAv = btcUsdt.getQuoteAv();
