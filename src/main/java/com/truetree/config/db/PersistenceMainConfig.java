@@ -1,9 +1,7 @@
 package com.truetree.config.db;
 
-import org.hibernate.boot.model.naming.CamelCaseToUnderscoresNamingStrategy;
 import org.springframework.boot.context.properties.ConfigurationProperties;
 import org.springframework.boot.jdbc.DataSourceBuilder;
-import org.springframework.boot.orm.jpa.hibernate.SpringImplicitNamingStrategy;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.context.annotation.Primary;
@@ -15,15 +13,13 @@ import org.springframework.orm.jpa.vendor.HibernateJpaVendorAdapter;
 import org.springframework.transaction.PlatformTransactionManager;
 
 import javax.sql.DataSource;
-import java.util.HashMap;
-import java.util.Map;
 
 @EnableJpaRepositories(
         basePackages = {"com.truetree.app.domain.main.*"},
         entityManagerFactoryRef = "mainEntityManager",
         transactionManagerRef = "mainTransactionManager"
 )
-@PropertySource({"classpath:database.properties"})
+@PropertySource({"classpath:application.properties"})
 @Configuration
 public class PersistenceMainConfig {
 
