@@ -6,7 +6,6 @@ import lombok.NoArgsConstructor;
 import javax.persistence.*;
 
 @Getter
-@Table(schema = "true_tree_main")
 @NoArgsConstructor
 @Entity
 public class GameHistory {
