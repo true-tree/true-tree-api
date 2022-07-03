@@ -174,3 +174,4 @@ application-db.yml
 application-jwt.yml
 application-oauth.yml
 src/main/resources/database.properties
+src/main/resources/application-database.properties
