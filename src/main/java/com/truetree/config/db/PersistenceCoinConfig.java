@@ -24,7 +24,7 @@ import java.util.Map;
         entityManagerFactoryRef = "coinEntityManager",
         transactionManagerRef = "coinTransactionManager"
 )
-@PropertySource({"classpath:database.properties"})
+@PropertySource({"classpath:application-databases.properties"})
 @Configuration
 public class PersistenceCoinConfig {
 

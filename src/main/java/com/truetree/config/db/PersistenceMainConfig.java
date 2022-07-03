@@ -23,7 +23,7 @@ import java.util.Map;
         entityManagerFactoryRef = "mainEntityManager",
         transactionManagerRef = "mainTransactionManager"
 )
-@PropertySource({"classpath:database.properties"})
+@PropertySource({"classpath:application-databases.properties"})
 @Configuration
 public class PersistenceMainConfig {
 
