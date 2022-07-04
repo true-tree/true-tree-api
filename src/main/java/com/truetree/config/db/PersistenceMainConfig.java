@@ -1,5 +1,6 @@
 package com.truetree.config.db;
 
+import lombok.RequiredArgsConstructor;
 import org.springframework.boot.context.properties.ConfigurationProperties;
 import org.springframework.boot.jdbc.DataSourceBuilder;
 import org.springframework.context.annotation.Bean;
@@ -14,6 +15,7 @@ import org.springframework.transaction.PlatformTransactionManager;
 
 import javax.sql.DataSource;
 
+@RequiredArgsConstructor
 @EnableJpaRepositories(
         basePackages = {"com.truetree.app.domain.main.*"},
         entityManagerFactoryRef = "mainEntityManager",
@@ -22,6 +24,8 @@ import javax.sql.DataSource;
 @PropertySource({"classpath:application.properties"})
 @Configuration
 public class PersistenceMainConfig {
+
+    private final HibernateCommonProperties hibernateCommonProperties;
 
     @Bean
     @Primary
@@ -32,7 +36,7 @@ public class PersistenceMainConfig {
 
         HibernateJpaVendorAdapter vendorAdapter = new HibernateJpaVendorAdapter();
         em.setJpaVendorAdapter(vendorAdapter);
-        em.setJpaPropertyMap(HibernateCommonProperties.commonProperties());
+        em.setJpaPropertyMap(hibernateCommonProperties.commonProperties());
         return em;
     }
 

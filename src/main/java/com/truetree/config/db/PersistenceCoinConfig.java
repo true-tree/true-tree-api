@@ -1,5 +1,6 @@
 package com.truetree.config.db;
 
+import lombok.RequiredArgsConstructor;
 import org.hibernate.boot.model.naming.CamelCaseToUnderscoresNamingStrategy;
 import org.hibernate.cfg.AvailableSettings;
 import org.springframework.boot.autoconfigure.orm.jpa.HibernateProperties;
@@ -25,8 +26,12 @@ import java.util.Map;
         transactionManagerRef = "coinTransactionManager"
 )
 @PropertySource({"classpath:application.properties"})
+@RequiredArgsConstructor
 @Configuration
 public class PersistenceCoinConfig {
+
+    private final HibernateCommonProperties hibernateCommonProperties;
+
 
     @Bean
     public LocalContainerEntityManagerFactoryBean coinEntityManager() {
@@ -35,7 +40,7 @@ public class PersistenceCoinConfig {
         em.setPackagesToScan("com.truetree.app.domain.coin.*");
         HibernateJpaVendorAdapter vendorAdapter = new HibernateJpaVendorAdapter();
         em.setJpaVendorAdapter(vendorAdapter);
-        em.setJpaPropertyMap(HibernateCommonProperties.commonProperties());
+        em.setJpaPropertyMap(hibernateCommonProperties.commonProperties());
         return em;
     }
 
