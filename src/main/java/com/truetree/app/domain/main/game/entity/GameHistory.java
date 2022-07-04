@@ -1,4 +1,4 @@
-package com.truetree.app.domain.main.game;
+package com.truetree.app.domain.main.game.entity;
 
 import lombok.Getter;
 import lombok.NoArgsConstructor;

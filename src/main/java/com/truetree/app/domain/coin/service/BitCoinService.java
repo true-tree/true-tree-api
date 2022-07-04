@@ -8,6 +8,7 @@ import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
 import java.util.List;
+import java.util.Optional;
 import java.util.stream.Collectors;
 
 @RequiredArgsConstructor
@@ -28,5 +29,11 @@ public class BitCoinService {
                 .collect(Collectors.toList());
         return bitCoinResponseDTOList;
     }
+
+    @Transactional(readOnly = true)
+    public long getAmount(){
+        return bitCoinRepository.count();
+    }
+
 
 }

@@ -1,5 +1,6 @@
 package com.truetree.app.domain.coin.entity;
 
+import com.truetree.app.domain.coin.dto.response.BitCoinResponseDTO;
 import lombok.Builder;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
@@ -56,4 +57,5 @@ public class BtcUsdt {
         this.takerBuyBaseAssetVolume = takerBuyBaseAssetVolume;
         this.symbol = symbol;
     }
+
 }
