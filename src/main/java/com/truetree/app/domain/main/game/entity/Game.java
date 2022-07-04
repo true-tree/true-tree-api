@@ -1,6 +1,7 @@
 package com.truetree.app.domain.main.game;
 
 import com.truetree.app.domain.main.member.entity.Member;
+import lombok.Builder;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 
@@ -28,4 +29,6 @@ public class Game {
     @Column(nullable = false)
     private Integer playGameCount;
 
+    @Builder
+    public Game(Member memberId,String coinName, Integer)
 }

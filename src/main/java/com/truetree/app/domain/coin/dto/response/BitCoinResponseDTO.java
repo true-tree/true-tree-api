@@ -27,7 +27,7 @@ public class BitCoinResponseDTO {
         this.openTime = btcUsdt.getOpenTime();
         this.open = btcUsdt.getOpen();
         this.high = btcUsdt.getHigh();
-        this.low = btcUsdt.getLog();
+        this.low = btcUsdt.getLow();
         this.close = btcUsdt.getClose();
         this.volume = btcUsdt.getVolume();
         this.quoteAv = btcUsdt.getQuoteAv();
