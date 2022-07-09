@@ -4,7 +4,6 @@ import com.truetree.app.domain.main.game.dto.GameResponseDTO;
 import com.truetree.app.domain.main.game.entity.Game;
 import com.truetree.app.domain.main.game.entity.GameRepository;
 import com.truetree.app.domain.main.member.entity.Member;
-import com.truetree.app.web.member.model.request.MemberDataRequestDTO;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
@@ -18,20 +17,22 @@ public class GameService {
     private final GameRepository gameRepository;
 
     @Transactional(readOnly = true)
-    public GameResponseDTO isGameExist(Long memberId){
-        Optional<Game> game = gameRepository.findByMemberId_Id(memberId);
+    public boolean isGameExist(Long memberId){
 
-        if(game.isPresent())
-            return new GameResponseDTO(game.get());
+        if(gameRepository.existByMemberId(memberId))
+            return true;
 
-        return null;
+        return false;
     }
 
-    public void createGame(Member member,Integer startNumber){
+    @Transactional
+    public void createGame(Member member,long gameDataAmount){
+
+        Integer startNumber = Math.toIntExact((long) (Math.random() * (gameDataAmount - 500)) + 101);
 
         gameRepository.save(
                 Game.builder()
-                        .memberId(member)
+                        .member(member)
                         .coinName("BTC")
                         .startNumber(startNumber)
                         .playGameCount(0)
