@@ -8,12 +8,13 @@ import com.truetree.app.domain.main.member.vo.kakao.KakaoTokenVO;
 import com.truetree.app.domain.main.member.entity.Member;
 import com.truetree.app.domain.main.member.entity.MemberRepository;
 import com.truetree.app.domain.main.member.vo.kakao.KakaoProfileVO;
-import com.truetree.app.web.member.model.request.MemberDataRequestDTO;
 import com.truetree.app.web.member.model.response.TokenResponseDTO;
 import com.truetree.common.jwt.JwtTokenUtil;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
+
+import java.util.Optional;
 
 @RequiredArgsConstructor
 @Service
@@ -59,10 +60,9 @@ public class MemberService {
         return new TokenResponseDTO(accessToken, refreshToken);
     }
 
-    public Member getMemberData(MemberDataRequestDTO requestDTO){
-        Member member = memberRepository.findById(requestDTO.getId()).get();
+    public Member getMemberData(Long memberId){
 
-        return member;
+        return memberRepository.findById(memberId).orElseThrow(() -> new IllegalArgumentException("Member가 존재하지 않습니다"));
     }
 
 }
