@@ -1,6 +1,5 @@
 package com.truetree.app.domain.main.game.entity;
 
-import com.truetree.app.domain.main.game.dto.GameResponseDTO;
 import com.truetree.app.domain.main.member.entity.Member;
 import lombok.Builder;
 import lombok.Getter;
@@ -19,7 +18,7 @@ public class Game {
 
     @ManyToOne(fetch = FetchType.LAZY)
     @JoinColumn(name = "member_id",nullable = false)
-    private Member memberId;
+    private Member member;
 
     @Column(length = 55, nullable = false)
     private String coinName;
@@ -31,8 +30,8 @@ public class Game {
     private Integer playGameCount;
 
     @Builder
-    public Game(Member memberId,String coinName, Integer startNumber,Integer playGameCount){
-        this.memberId =memberId;
+    public Game(Member member, String coinName, Integer startNumber, Integer playGameCount){
+        this.member = member;
         this.coinName = coinName;
         this.startNumber = startNumber;
         this.playGameCount = playGameCount;
