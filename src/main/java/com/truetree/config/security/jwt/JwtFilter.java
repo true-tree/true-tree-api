@@ -27,6 +27,7 @@ public class JwtFilter extends OncePerRequestFilter {
 
     private final JwtTokenUtil jwtTokenUtil;
     private final MemberRepository memberRepository;
+    private final String tokenKey = "Authorization";
 
     @Override
     protected void doFilterInternal(HttpServletRequest request, HttpServletResponse response, FilterChain filterChain) throws ServletException, IOException {
@@ -47,7 +48,11 @@ public class JwtFilter extends OncePerRequestFilter {
     }
 
     private String getAccessToken(HttpServletRequest request) {
-        return request.getHeader(AuthorizationType.BEARER.getType());
+        String value = request.getHeader(tokenKey);
+        if (value == null) {
+            return null;
+        }
+        return value.replace(AuthorizationType.BEARER.getType(), "").trim();
     }
 
     private Authentication getAuthentication(Long id) {
