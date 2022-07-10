@@ -1,6 +1,5 @@
 package com.truetree.app.domain.coin.entity;
 
-import com.truetree.app.domain.coin.dto.response.BitCoinResponseDTO;
 import lombok.Builder;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
@@ -30,7 +29,7 @@ public class BtcUsdt {
     private long open;
     private long high;
 
-    private long log;
+    private long low;
 
     private long close;
     private long volume;
@@ -44,11 +43,11 @@ public class BtcUsdt {
     private String symbol;
 
     @Builder
-    public BtcUsdt(LocalDateTime openTime, long open, long high, long log, long close, long volume, long quoteAv, long trades, long takerBuyVolume, long takerBuyBaseAssetVolume, String symbol) {
+    public BtcUsdt(LocalDateTime openTime, long open, long high, long low, long close, long volume, long quoteAv, long trades, long takerBuyVolume, long takerBuyBaseAssetVolume, String symbol) {
         this.openTime = openTime;
         this.open = open;
         this.high = high;
-        this.log = log;
+        this.low = low;
         this.close = close;
         this.volume = volume;
         this.quoteAv = quoteAv;
