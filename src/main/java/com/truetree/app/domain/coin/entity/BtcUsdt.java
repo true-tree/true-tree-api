@@ -30,7 +30,7 @@ public class BtcUsdt {
     private long open;
     private long high;
 
-    private long low;
+    private long log;
 
     private long close;
     private long volume;
@@ -44,11 +44,11 @@ public class BtcUsdt {
     private String symbol;
 
     @Builder
-    public BtcUsdt(LocalDateTime openTime, long open, long high, long low, long close, long volume, long quoteAv, long trades, long takerBuyVolume, long takerBuyBaseAssetVolume, String symbol) {
+    public BtcUsdt(LocalDateTime openTime, long open, long high, long log, long close, long volume, long quoteAv, long trades, long takerBuyVolume, long takerBuyBaseAssetVolume, String symbol) {
         this.openTime = openTime;
         this.open = open;
         this.high = high;
-        this.low = low;
+        this.log = log;
         this.close = close;
         this.volume = volume;
         this.quoteAv = quoteAv;
