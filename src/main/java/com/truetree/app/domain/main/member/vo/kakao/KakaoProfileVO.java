@@ -15,7 +15,7 @@ public class KakaoProfileVO {
         String time = String.valueOf(System.currentTimeMillis()).substring(8);
         return Member.builder()
                 .snsId(String.valueOf(id))
-                .nickName(kakao_account.getProfile().getNickname() + "_" + time)
+                .nickName(time + "new")
 //                .nickName("random")
                 .socialType(SocialType.KAKAO)
                 .money(1000_0000)
