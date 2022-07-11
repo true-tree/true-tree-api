@@ -58,8 +58,7 @@ public class Member {
 
 
     @Builder
-    public Member(Long id,String snsId, String nickName, SocialType socialType, Integer money, List<MemberAuthority> memberAuthorityList, LocalDateTime createAt, LocalDateTime updateAt) {
-        this.id = id;
+    public Member(String snsId, String nickName, SocialType socialType, Integer money, List<MemberAuthority> memberAuthorityList, LocalDateTime createAt, LocalDateTime updateAt) {
         this.snsId = snsId;
         this.nickName = nickName;
         this.socialType = socialType;
