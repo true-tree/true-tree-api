@@ -1,6 +1,7 @@
 package com.truetree.app.web.Game.controller;
 
 import com.truetree.app.domain.coin.service.BitCoinService;
+import com.truetree.app.domain.main.game.entity.GameRepository;
 import com.truetree.app.domain.main.game.service.GameService;
 import com.truetree.app.domain.main.member.entity.Member;
 import com.truetree.app.domain.main.member.service.oauth.MemberService;
@@ -19,8 +20,7 @@ import org.springframework.web.bind.annotation.RestController;
 public class GameController {
 
     private final GameService gameService;
-    private final MemberService memberService;
-    private final BitCoinService bitCoinService;
+
 
     @PostMapping("/create/game")
     public ResponseEntity<Boolean> createGame(@AuthenticationPrincipal User user){
@@ -31,13 +31,9 @@ public class GameController {
             return new ResponseEntity<>(false, HttpStatus.OK);
         }
 
-
-        Member member = memberService.getMemberData(memberId);
-
-        long amountOfData = bitCoinService.getAmount();
-        gameService.createGame(member,amountOfData);
-
+        gameService.createGame(memberId);
         return new ResponseEntity<>(true, HttpStatus.OK);
 
     }
+
 }
