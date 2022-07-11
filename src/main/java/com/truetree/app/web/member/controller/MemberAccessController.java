@@ -6,12 +6,15 @@ import com.truetree.app.domain.main.member.service.oauth.MemberService;
 import com.truetree.app.domain.main.member.vo.kakao.KakaoProfileVO;
 import com.truetree.app.web.member.model.request.AccessTokenRequestDTO;
 import com.truetree.app.web.member.model.response.TokenResponseDTO;
+import io.swagger.annotations.Api;
+import io.swagger.v3.oas.annotations.tags.Tag;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
+@Api(tags = "회원가입")
 @Slf4j
 @RequestMapping("/v1")
 @RequiredArgsConstructor
