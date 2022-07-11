@@ -19,8 +19,6 @@ import org.springframework.web.bind.annotation.*;
 public class MemberAccessController {
 
     private final MemberService memberService;
-    private final GameService gameService;
-    private final BitCoinService bitCoinService;
 
     @RequestMapping("/login/oauth2/code/kakao")
     public ResponseEntity<TokenResponseDTO> signUp(@RequestParam("code") String code) {
