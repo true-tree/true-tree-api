@@ -41,5 +41,5 @@ jobs:
       run: aws s3 cp --region ap-northeast-2 true-tree.zip s3://true-tree-build/deploy/true-tree.zip
     
     - name: CodeDeploy
-      run: aws deploy create-deployment --application-name true-tree-codedeploy --deployment-config-name CodeDeployDefault.OneAtATime --deployment-group-name true-tree-codedeploy-group --s3-location bucket=true-tree-build,bundleType=zip,key=deploy/true-tree.zip
+      run: aws deploy create-deployment --application-name true-tree-codedeploy --deployment-group-name true-tree-codedeploy-group-v2 --s3-location bucket=true-tree-build,bundleType=zip,key=deploy/true-tree.zip
       
