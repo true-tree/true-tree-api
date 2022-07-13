@@ -2,7 +2,6 @@ package com.truetree.app.domain.main.game.dto;
 
 import com.truetree.app.domain.main.game.entity.Game;
 import com.truetree.app.domain.main.member.entity.Member;
-import lombok.Builder;
 import lombok.Getter;
 
 @Getter
@@ -21,7 +20,7 @@ public class GameResponseDTO {
 
     public GameResponseDTO(Game game){
         this.id = game.getId();
-        this.memberId = game.getMemberId();
+        this.memberId = game.getMember();
         this.coinName = game.getCoinName();
         this.startNumber = game.getStartNumber();
         this.playGameCount = game.getStartNumber();
