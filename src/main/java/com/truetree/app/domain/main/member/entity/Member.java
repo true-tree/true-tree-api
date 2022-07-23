@@ -1,5 +1,6 @@
 package com.truetree.app.domain.main.member.entity;
 
+import com.truetree.app.domain.main.member.entity.enums.Authority;
 import com.truetree.app.domain.main.member.entity.enums.SocialType;
 import lombok.Builder;
 import lombok.Getter;
@@ -74,6 +75,13 @@ public class Member {
                 .stream()
                 .map(entity -> new SimpleGrantedAuthority(entity.getAuthority().name()))
                 .collect(Collectors.toList());
+    }
+
+    public void initMemberAuthority() {
+        this.memberAuthorityList.add(MemberAuthority.builder()
+                .memberId(this)
+                .authority(Authority.USER)
+                .build());
     }
 
 }

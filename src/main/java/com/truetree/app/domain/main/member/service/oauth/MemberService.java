@@ -28,19 +28,11 @@ public class MemberService {
     @Transactional(rollbackFor = RuntimeException.class)
     public TokenResponseDTO getGeneratedTokens(KakaoProfileVO profile) {
 
+        //
         Member member = memberRepository.findBySnsId(String.valueOf(profile.getId()))
                 .orElse(profile.toEntity());
 
         memberRepository.save(member);
-
-        MemberAuthority memberAuthority = MemberAuthority.builder()
-                .memberId(member)
-                .authority(Authority.USER)
-                .build();
-
-        memberAuthorityRepository.save(memberAuthority);
-
-
         return createToken(member.getId());
     }
 
