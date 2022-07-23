@@ -3,6 +3,11 @@
 REPOSITORY=/home/ec2-user/app
 START_REPOSITORY=/home/ec2-user/start
 
+# nginx start
+
+echo "> nginx start"
+sudo service nginx start
+
 echo "> 구동 할 애플리케이션을 복사 합니다."
 
 cp $REPOSITORY/build/libs/*.jar $START_REPOSITORY
