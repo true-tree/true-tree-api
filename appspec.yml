@@ -16,3 +16,11 @@ hooks:
     - location: scripts/deploy.sh
       timeout: 60
       runas: ec2-user
+  ValidateService:
+    - location: scripts/deploy.sh
+      timeout: 60
+      runas: ec2-user
+  BeforeAllowTraffic:
+    - location: scripts/deploy.sh
+      timeout: 60
+      runas: ec2-user
